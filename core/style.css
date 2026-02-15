@@ -1,0 +1,139 @@
+/* --- VARIABLES GLOBALES (Colores de tu marca) --- */
+:root {
+    --color-principal: #0056b3;  /* Azul Corporativo */
+    --color-secundario: #00a8e8; /* Azul Digital */
+    --color-texto: #333333;
+    --color-fondo: #ffffff;
+    --color-fondo-suave: #f4f7f6;
+    --whatsapp-color: #25D366;
+}
+
+/* --- RESET BÁSICO --- */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Arial', sans-serif; }
+body { color: var(--color-texto); line-height: 1.6; }
+a { text-decoration: none; }
+
+/* --- BLOQUE: NAVEGACIÓN (BEM) --- */
+.nav {
+    background-color: #1a1a1a;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav__logo { color: white; font-weight: bold; font-size: 1.5rem; }
+.nav__menu { display: flex; gap: 20px; }
+.nav__link { color: white; transition: color 0.3s; }
+.nav__link:hover { color: var(--color-secundario); }
+.nav__link--activo { color: var(--color-secundario); border-bottom: 2px solid var(--color-secundario); }
+
+/* --- BLOQUE: HERO (Portada) --- */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://source.unsplash.com/1600x900/?office,tech');
+    background-size: cover;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+.hero__titulo { font-size: 3rem; margin-bottom: 20px; }
+.hero__cta {
+    background-color: var(--color-principal);
+    color: white;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-weight: bold;
+    display: inline-block;
+}
+.hero__cta:hover { background-color: var(--color-secundario); }
+
+/* --- BLOQUE: TARJETAS (Servicios) --- */
+.contenedor { max-width: 1200px; margin: 0 auto; padding: 50px 20px; }
+.grid-servicios { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+
+.tarjeta {
+    background: var(--color-fondo);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+.tarjeta:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+.tarjeta__titulo { color: var(--color-principal); margin-bottom: 15px; }
+.tarjeta__precio { font-size: 2rem; font-weight: bold; color: #333; margin: 15px 0; }
+.tarjeta__stack { font-size: 0.9rem; color: #666; font-style: italic; margin-bottom: 20px; }
+
+/* --- BLOQUE: BOTÓN FLOTANTE WHATSAPP --- */
+.btn-whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--whatsapp-color);
+    color: white;
+    padding: 15px 20px;
+    border-radius: 50px;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 1000;
+}
+.btn-whatsapp:hover { background-color: #1ebe57; }
+
+/* --- BLOQUE: FORMULARIO --- */
+.form { max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px; }
+.form__input { padding: 15px; border: 1px solid #ccc; border-radius: 5px; }
+.form__boton { background: var(--color-principal); color: white; padding: 15px; border: none; cursor: pointer; font-size: 1rem; }
+
+/* --- BLOQUE: FOOTER (BEM) --- */
+.footer {
+    background-color: #1a1a1a; /* Mismo color oscuro del menú */
+    color: #888;              /* Gris suave para no cansar la vista */
+    padding: 40px 20px;
+    margin-top: 60px;         /* Separación del contenido de arriba */
+    text-align: center;
+    border-top: 3px solid var(--color-principal); /* Detalle de color corporativo */
+}
+
+.footer__contenido {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.footer__texto {
+    font-size: 0.9rem;
+}
+
+.footer__legales {
+    font-size: 0.85rem;
+    margin-top: 10px;
+}
+
+.footer__link {
+    color: #888;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer__link:hover {
+    color: white; /* Brilla al pasar el mouse */
+    text-decoration: underline;
+}
+
+.footer__separador {
+    margin: 0 10px;
+    color: #444;
+}
+
+/* Responsivo: En pantallas grandes, poner texto y enlaces en la misma línea */
+@media (min-width: 768px) {
+    .footer__contenido {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .footer__legales {
+        margin-top: 0;
+    }
+}
