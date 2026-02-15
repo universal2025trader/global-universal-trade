@@ -136,4 +136,35 @@ a { text-decoration: none; }
     .footer__legales {
         margin-top: 0;
     }
+
+}
+
+
+/* --- BLOQUE: BOTONES DE PAGO (BEM) --- */
+
+/* Botón específico para Stripe (Color Púrpura oficial de Stripe para confianza) */
+.btn-stripe {
+    background-color: #635bff; /* Color Stripe */
+    transition: all 0.3s ease;
+    width: 100%; /* Ocupa todo el ancho de la tarjeta */
+    text-align: center;
+    margin-top: 15px;
+}
+
+.btn-stripe:hover {
+    background-color: #4b45c6;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(99, 91, 255, 0.4);
+}
+
+/* Botón específico para Cotizar (Color oscuro o secundario) */
+.btn-cotizar {
+    background-color: #333;
+    width: 100%;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.btn-cotizar:hover {
+    background-color: #000;
 }
